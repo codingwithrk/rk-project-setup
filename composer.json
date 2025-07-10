@@ -1,6 +1,6 @@
 {
   "name": "codingwithrk/rk-project-setup",
-  "description": "Auto-setup a new Laravel project with NPM + Livewire + FluxUI",
+  "description": "Auto-setup NPM + Livewire + FluxUI for a new Laravel project.",
   "type": "composer-plugin",
   "license": "MIT",
   "authors": [

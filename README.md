@@ -1,3 +1,5 @@
+![Image](https://codingwithrk.com/package-banner/rk-project-setup.png)
+
 <h1 align="center">RK Project Setup</h1>
 
 <p align="center">
