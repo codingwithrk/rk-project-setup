@@ -22,7 +22,7 @@ For FluxUI I have to change file like
 
 So, I decided to create this package. If you are also same like me then you can use this package in your next **Laravel** project.
 
-## How to use
+## How to install
 
 ### In your laravel project
 

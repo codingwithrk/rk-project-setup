@@ -39,6 +39,11 @@ class ProjectSetupInstaller implements PluginInterface, EventSubscriberInterface
         shell_exec("npm install");
         $io->write("<comment>✅ npm install completed!</comment>");
 
+        if ($this->isPackageInstalled('livewire/livewire')) {
+            $io->write("<comment>⚠️  Livewire already installed. Skipping rk-project-setup.</comment>");
+            return;
+        }
+
         // Install Livewire
         $io->write("<info>📦 Installing Livewire...</info>");
         shell_exec("composer require livewire/livewire");
@@ -108,6 +113,30 @@ CSS
         }
 
         $io->write("<info>🎉 rk-project-setup completed successfully!</info>");
+    }
+
+
+    protected function isPackageInstalled(string $package): bool
+    {
+        $installedFile = __DIR__ . '/../../../composer/installed.json';
+
+        if (!file_exists($installedFile)) {
+            return false;
+        }
+
+        $installed = json_decode(file_get_contents($installedFile), true);
+
+        if (isset($installed['packages'])) {
+            $installed = $installed['packages']; // Composer 2.x
+        }
+
+        foreach ($installed as $pkg) {
+            if (isset($pkg['name']) && $pkg['name'] === $package) {
+                return true;
+            }
+        }
+
+        return false;
     }
 
 }
