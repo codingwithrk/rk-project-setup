@@ -1,8 +1,14 @@
 {
   "name": "codingwithrk/rk-project-setup",
-  "description": "Auto-setup a new Laravel project with Livewire + Flux",
+  "description": "Auto-setup a new Laravel project with NPM + Livewire + Flux",
   "type": "composer-plugin",
   "license": "MIT",
+  "authors": [
+    {
+      "name": "CodingwithRK",
+      "email": "pappalarajkumar@gmail.com"
+    }
+  ],
   "require": {
     "composer-plugin-api": "^2.0"
   },
