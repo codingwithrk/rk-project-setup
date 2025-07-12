@@ -36,6 +36,12 @@ composer require codingwithrk/rk-project-setup
 >
 > That's it you it will take care rest of the installations.
 
+> Once Installed just run below command for update.
+
+```bash
+composer update
+```
+
 ## Credits
 
 - [CodingwithRK](https://codingwithrk.com/)

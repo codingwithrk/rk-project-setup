@@ -46,7 +46,7 @@ class ProjectSetupInstaller implements PluginInterface, EventSubscriberInterface
 
         // Install Livewire
         $io->write("<info>📦 Installing Livewire...</info>");
-        shell_exec("composer require livewire/livewire");
+        shell_exec("composer require livewire/livewire > /dev/null 2>&1");
         $io->write("<comment>✅ Livewire installed!</comment>");
 
         // Publish Livewire config
@@ -61,7 +61,7 @@ class ProjectSetupInstaller implements PluginInterface, EventSubscriberInterface
 
         // Install Flux
         $io->write("<info>📦 Installing Flux...</info>");
-        shell_exec("composer require livewire/flux");
+        shell_exec("composer require livewire/flux > /dev/null 2>&1");
         $io->write("<comment>✅ Flux installed!</comment>");
 
         // Modify layout file
@@ -111,12 +111,8 @@ CSS
             );
             $io->write("<comment>✅ app.css updated!</comment>");
         }
-
-        // Composer update
-        $io->write("<info>🎼 Final update composer...</info>");
-        shell_exec("composer update");
-        $io->write("<comment>✅ Composer updated!</comment>");
-
+        
+        $io->write("<info>💡 Run this manually:</info> composer update");
         $io->write("<info>🎉 Rk Project Setup completed successfully!</info>");
     }
 
