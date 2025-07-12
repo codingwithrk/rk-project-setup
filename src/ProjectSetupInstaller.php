@@ -112,7 +112,12 @@ CSS
             $io->write("<comment>✅ app.css updated!</comment>");
         }
 
-        $io->write("<info>🎉 rk-project-setup completed successfully!</info>");
+        // Composer update
+        $io->write("<info>🎼 Final update composer...</info>");
+        shell_exec("composer update");
+        $io->write("<comment>✅ Composer updated!</comment>");
+
+        $io->write("<info>🎉 Rk Project Setup completed successfully!</info>");
     }
 
 
